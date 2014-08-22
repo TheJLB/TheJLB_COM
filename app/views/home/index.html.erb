@@ -1,0 +1,74 @@
+<div class="page-header header-home">
+	<div class="container">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+    <h2>Welcome</h2>
+    <h4>to the new home of TheJLB.com! I have finally decided to consolidate
+    everything under one common home, so please bare with me while I am getting
+    everything in order. I will be adding new content and functionality over time,
+    so please come back to checkout new features and functionality...</h4>
+    </div>
+	</div>
+</div>
+
+<div class='container'>
+	<div class='col-md-4'>
+		<div class='panel panel-default'>
+			<div class='panel-body panel-home'>
+
+				<h2>Resume</h2>
+				<p>Revised and updated 8/14/2014 with links to view and download
+				a copy from Google Docs and to my Linkedin profile. <b>Senoir/Management
+				level analytics technologist.</b></p>
+
+				<%= link_to resume_path, class: "btn btn-primary btn-sm pull-right" do %>
+					Learn more &raquo;
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+
+	<div class='col-md-4'>
+		<div class='panel panel-default'>
+			<div class='panel-body panel-home'>
+
+				<h2>Tealeaf Analytics Blog</h2>
+				<p>Welcome to the new home of the Tealeaf Analytics Blog. The entries
+				are identical to the blogspot Tealeaf-101, and is intended to be
+				the new home of this blog going forward.</p>
+
+				<%= link_to blog_path, class: "btn btn-primary btn-sm pull-right" do %>
+					Learn more &raquo;
+				<% end %>
+
+			</div>	
+		</div>
+	</div>
+
+	<div class='col-md-4'>
+		<div class='panel panel-default'>
+			<div class='panel-body panel-home'>
+
+				<h2>Coming Soon!</h2>
+				<p><b>Metrix:</b> Enterprise consulting services focused on 
+				User/Customer Experience (CX/UX)</b></p>
+				<p><b>MMA Metrix:</b> Predictive analytics for the sport of 
+				Mixed Martial Arts(MMA).</p>
+
+				<%= link_to metrix_path, class: "btn btn-primary btn-sm pull-right" do %>
+					Learn more &raquo;
+				<% end %>
+
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<hr>
+	<h3>Some more content...</h3>
+	
+</div>
+
+<br><%= render 'layouts/navbar_home' %>

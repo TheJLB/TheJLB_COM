@@ -1,0 +1,53 @@
+<div class="container"><br>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Tealeaf Version 8 - Review <span class="badge">07-21-2012</span></h3>
+		</div>
+		<div class="panel-body">
+			<h3>A Multi-User Review of Tealeaf Version 8:</h3>
+			  <img src="/assets/Tealeaf_IBM.jpg" class="img-rounded", align="left"><p>Tealeaf version 8 was a significant update to the software suite and is a major improvement over version 7, and has introduced some new concepts and capabilities. When I was first introduced to version 8 early in 2011, it took me a while to fully appreciate the new way of doing things. After some time, and admittedly, resistance, I began to appreciate the new version and features.</p>
+
+				<p>My initial thought after being exposed to version 8 for the first time was, “How much time it was going to take to relearn the process of creating events?” Reporting (Scorecards, KPIs and Dashboards) remained largely the same, with the addition of Dimensions and Top Movers. Fortunately, I was introduced to version 8 before the official release was out in the public, being installed into customer environments, so I had some time to absorb and reflect on all the changes.</p>
+
+				<p>After getting past my initial resistance to change, I dove in and built a test environment to kick the tires. Once I finally got my hands a little dirty and worked through some of the early-release issues inherent with first release versions, I really started to appreciate and like the new features. In the next sections, I will cover what you can expect from the perspective of a non-technical Tealeaf User, Tealeaf Event/Report User and the Tealeaf Administrator (Configuration and Systems Administration).</p>
+
+				<b>Tealeaf User:</b>
+				<p>The typical Tealeaf user is not going to notice a lot of changes. The Tealeaf Portal is still the primary means of searching for sessions and viewing reports. What you will notice are some the newly introduced features, such as, Top Movers, Dimensions and increased functionality of Browser-Based Replay (BBR). Top Movers are new to version 8, and allow you to track hourly and/or daily statistical deviations for event counts and values.<p>
+
+				<p>The introduction of Top Movers is a great addition to Tealeaf, and allows you to quickly identify deviations that would otherwise be difficult to quantify without a significant amount of work. I am still playing around with different ways to unleash the power of Top Movers in Reports and Dashboards.</p>
+
+				<p>While Dimensions are not technically a new feature of version 8, they are much more useful and powerful in version 8. References, in version 7, were the baby brother of Dimensions, and were visible to the Tealeaf user in drop-down menus throughout the portal to segment your data. Dimensions, on the other hand, are the 250 lb., burly, grown-up, big brother of References.</p>
+
+				<p>Dimensions allow you to segment your data based off of event values. Any event value you can imagine and create, you can build a Dimension upon which to segment your data. This is a very powerful feature of the new version, and will probably become one of your new best friends as a Tealeaf user.</p>
+
+				<p>Like Dimensions, BBR is not a new feature of version 8, but has undergone significant upgrades and enhancements in functionality. As I understand it, the RealiTeaViewer (RTV) client will eventually be phased out, and BBR will be the primary means of replaying sessions. As a power-user, I still prefer RTV to review and replay sessions, but BBR is now a viable alternative.</p>
+
+				<b>Tealeaf Event/Report User:</b>
+				<p>For the Tealeaf Event Modeler and Report Administrator, the changes are pretty significant. One of the first things, and probably most significant, is that the Event Creation methodology and process has been completely rewritten in version 8. Event Creation has been integrated into the Portal, and is no longer performed with the RTV client.</p>
+
+				<p>As mentioned in the Tealeaf User section above, there are some new tools available to the Event Modeler.  Top Movers and Dimensions are just two new concepts introduced in version 8, the most significant change to users of previous versions is the Event Creation methodology. In the interest of keeping this article fairly short, I won't even attempt to go into all the changes here.</p>
+
+				<p>The good news for the power users is that reporting is very similar. Scorecards, KPIs and Dashboards are all created in the same way they were in version 7 with the added functionality and flexibility of Dimensions and Top Movers.</p>
+
+				<b>Tealeaf Administrator:</b>
+				<p>The configuration and setup of your Tealeaf system, from an administrative point of view, remains largely the same, with the exception of some of the previously mentioned features. The Tealeaf Management System (TMS) has not changed, and everything is found in the same locations to configure the various items. There are some additional configuration options for new features like BBR, and you no longer need to worry about configuring References, which are taken care of via Dimensions now.</p>
+
+				<p>If you use alerts to monitor your Tealeaf system, you will need to get familiar with the new Event Model that is now managed through the Portal, as previously mentioned.</p>
+
+				<b>Conclusion:</b>
+				<p>Tealeaf did a good job of keeping the user interface familiar, while integrating the new concepts in the design of version 8. While I didn't initially embrace all the changes, once I took the time to play around with the new version for a little bit, I began to realize the power of the new features.</p>
+
+				<p>The biggest learning curve will be for the event modelers. Most other components are familiar and easy to adapt to.  The new Event Methodology and Dimensions are extremely useful and powerful, and well worth the time investment to re-learn.</p>
+
+				<div class="center-x">
+					<%= link_to blog_path, class: "btn btn-sm btn-primary" do %>
+						<span class="glyphicon glyphicon-arrow-left"> Back</span>
+					<% end %>
+				</div>
+
+				<br>
+		</div>
+	</div>
+</div>
+
+<br><%= render 'layouts/navbar_blog' %>

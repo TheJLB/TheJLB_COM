@@ -1,0 +1,27 @@
+<div class="container"><br>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Session Discard Events for Bots: <span class="badge">10-18-2011</span></h3>
+		</div>
+		<div class="panel-body">
+			<h3>Tealeaf Event - Session Discard</h3>
+			<p>In the final method, we use events to remove the Bot sessions from the processing/canister server before they are stored in the Long Term Canister (LTC).  To do this, we need to create the event(s) necessary to identify the Bot traffic, and we need a compound event that will drop the session once it is identified.  With this method, we can use the same field in the request HTTP_USER_AGENT to identify our Bots when creating events, or if you have installed the Traffic Analysis template from Tealeaf you can leverage the events.</p>
+
+			<p>Once we have our events created to identify our Bot traffic, and we have validated they are working as expected, we can include these events in a Compound Session Discard Event.  The Compound Session Discard Event will remove the session if it matches any of the criteria events selected.  If you are already familiar with event creation, this should be a pretty simple operation for you, but there are some things you should be aware of before you chose this method to remove Bot traffic.</p>
+
+			<p>When you use a Session Discard Event to keep traffic from getting to your LTC, these events are still counted as sessions in the Tealeaf system, as are any other events that have fired for that session.  In the interest of brevity, as if this blog isn't long enough already, I won't get into all the reasons why this is, just understand that this is one of the side-effects of using this method.  The discarded sessions will not be in your LTC, and you won't be able to replay these sessions, but all the event counts will be updated in the reporting database.</p>
+
+			<p>If your primary goal is to save LTC disk space, this is an easy way to accomplish this task, as long as you don't mind the additional hits/sessions and event counts that will be stored in your reporting database.</p>
+
+				<div class="center-x">
+					<%= link_to blog_path, class: "btn btn-sm btn-primary" do %>
+						<span class="glyphicon glyphicon-arrow-left"> Back</span>
+					<% end %>
+				</div>
+
+				<br>
+		</div>
+	</div>
+</div>
+
+<br><%= render 'layouts/navbar_blog' %>

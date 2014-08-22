@@ -1,0 +1,141 @@
+ @import "bootstrap";
+
+body { 
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.panel-home {
+	margin-top: -10px;
+	height: 210px;
+}
+
+.panel-default:hover {
+	background: #f5f5f5;
+}
+
+/* Navbar Navbar-Fixed-Bottom Configurations */
+.navbar-fixed-bottom {
+	background: #B0C4DE;
+}
+
+/* Navbar Navbar-Fixed-Top Configurations */
+.navbar-fixed-top {
+	background: #B0C4DE;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #808080;
+	background: #F5F5DC;
+	font-weight: bold;
+}
+
+.navbar-nav {
+	font-size: 110%;
+}
+
+.navbar-brand {
+	font-size: 200%;
+	font-weight: bold;
+}
+
+/* Jumbotron Configurations */
+.jumbotron {
+	margin-top: -55px;
+	margin-bottom: 10px;
+	background: #F5F5DC;
+}
+
+.page-header {
+	background: #F5F5DC;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.list-group-item-text {
+	margin-top: -10px;
+	margin-bottom: -5px;
+}
+
+h2 {
+	color: #006699;
+	font-family: serif;
+	font-size: 225%;
+	font-weight: bold;
+}
+
+h4 {
+	color: #909090 ;
+}
+
+h5 {
+	color: #F8F8F8;
+	font-weight: bold;
+	font-size: 125%;
+	margin-top: -3px;
+}
+
+/* Breadcrum Configurations */
+.breadcrumb {
+	background-color: #B0C4DE;
+}
+.breadcrumb li {
+  display: inline-block;
+}
+.breadcrumb a {
+	color: #333333;
+	font-size: 75%;
+}
+.breadcrumb .active {
+  color: #F0F8FF;
+  font-size: 75%;
+}
+.breadcrumb > li + li:before {
+    color: #483D8B;
+    font-size: 100%;
+    content: "| ";
+    padding: 0 5px;
+}
+
+.dropdown {
+	color: #000;
+	background: #B0C4DE;
+}
+
+.panel {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.panel-default .panel-heading {
+	background: #3399cc;
+}
+
+.panel-title {
+	color: #4682B4;
+	font-weight: bold;
+}
+
+/* Footer Configurations */
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.panel-heading .accordion-toggle:before {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: white;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:before {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}

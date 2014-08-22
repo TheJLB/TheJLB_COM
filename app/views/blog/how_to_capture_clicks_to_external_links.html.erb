@@ -1,0 +1,29 @@
+<div class="container"><br>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">How to Capture Clicks to External Links <span class="badge">10-26-2011</span></h3>
+		</div>
+		<div class="panel-body">
+			<h3>How to capture clicks to external sites in Tealeaf, without using the UI SDK:</h3>
+			<p>How do you capture clicks to external site links in Tealeaf if you are not using the UI SDK?  Well, the first thing I would ask you is why aren't you using the UI SDK?  The wealth of information provided to you by this tool is amazing, and it doesn't cost you or your company any additional licensing fees from Tealeaf.  The UI SDK is included in whatever licensing fees you are already paying Tealeaf, so why not use it?</p>
+
+			<p>Let's assume you can't or don't want to use the UI SDK, and what we can do to capture this information in Tealeaf.  The way Tealeaf captures data (inline) you don't have the ability to know when a visitor has clicked on a link that leads them away from our site.  Once the user clicks on the link and leaves your site, you no longer have the ability to capture anything that user is doing in Tealeaf.  That external link makes a request (REQ) to another server outside your control and ability to capture.</p>
+
+			<p>To be able to track clicks to external site links, you need to make sure that final click is making a request to your web servers before the visitor leaves our site.  One easy way accomplish this is to change all the external links you want to track to a page on your site that will then redirect the visitor to their expected destination.  Using redirects (302), you are now keeping the visitor on your site for one additional page, that will be captured in Tealeaf giving you insight as to what the user did before exiting your site.</p>
+
+			<p>I recently had a client that was using Tealeaf without the UI SDK, and they wanted to be able to track how many people clicked on the Google checkout link they had on their order form.  Without using redirects, they could have figured out roughly what their completion rate was for their checkout form, by calculating the number of completed transactions with Google, but they would not have visibility into what sessions were completed transactions versus abandonment.  Using the method I described, they were able to determine the number of visitors that abandoned the checkout process without selecting a payment method, and get an accurate idea of the completion rate for visitors using Google checkout.</p>
+
+			<p>Depending on how many external site links you have on your site, the amount of effort to implement this solution may or may not be trivial.  I recommend tracking all external links on your site, because this visibility is critical to understanding what your visitors are doing.  Are they using the links you setup, or are they simply ending their session and closing their browser?  You don't know unless you track these links in such a way.  If you have a lot of links to external sites, you may want to consider using the UI SDK.  The amount of effort to setup and maintain multiple redirects is going to outweigh the effort to setup and configure the UI SDK, and you will reap all the additional benefits of this tool.</p>
+
+							<div class="center-x">
+					<%= link_to blog_path, class: "btn btn-sm btn-primary" do %>
+						<span class="glyphicon glyphicon-arrow-left"> Back</span>
+					<% end %>
+				</div>
+
+				<br>
+		</div>
+	</div>
+</div>
+
+<br><%= render 'layouts/navbar_blog' %>

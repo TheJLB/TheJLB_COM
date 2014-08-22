@@ -1,0 +1,33 @@
+<div class="container"><br>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">DataDrop rules for Bot Traffic <span class="badge">10-18-2011</span></h3>
+		</div>
+		<div class="panel-body">
+		<h3>Processing/Canister Server - DataDrop Rules</h3>
+		<p>The second option to drop Bot traffic is by utilizing the DataDrop pipeline agent on your Processing/Canister server.  DataDrop rules work in a very similar way as the DropHit rules above, with different formatting of the rules and the fact that these rules are set in the Transport Service Configuration , instead of in the Privacy Filter Configuration in TMS on your Processing/Canister server.  Within the Transport Service Configuration, the default configuration includes the DataDrop pipeline agent.  If you don't see the DataDrop pipeline agent included in your configuration, you will need to add it to be able to use this method of removing Bot traffic.</p>
+
+		<p>In the following DataDrop rule, we are searching in the request buffer, specifically for the name HTTP_USER_AGENT containing Googlebot:</p>
+
+		<ul><ul><ul>
+		<li>Drop10=reqfield HTTP_USER_AGENT contains Googlebot</li>
+		</ul></ul></ul>
+
+		<p>The HTTP_USER_AGENT is a great way to identify Bot traffic, and thus, remove it from your Tealeaf pipeline.  While this is a great way to start tackling Bot traffic on your Tealeaf system, it is by no means the only way, and if you come up with a different name/value pair that works better for your environment and purposes, by all means, use it.  When creating your DataDrop rules, make them as broad/generic as possible to remove as much of the Bot traffic as possible without removing any wanted traffic.  This will take a little analysis on your part, but once you start looking at some of the Bot traffic on your system, you will quickly identify some common patterns that you can use to rid your system of Bot traffic.</p>
+
+		<p>While it shouldn't be a problem, you can have a total of 100 DataDrop rules defined in your pipeline.  Remember, every additional rule you have means additional processing load on your server, so be aware of the impact of adding a bunch of rules in your pipeline.</p>
+
+		<p>The DataDrop method of dropping Bot traffic is a good option if your PCA is heavily loaded and you want to distribute the processing of these rules to another server, or if you don't have access to the PCA servers for some reason.  Both of these methods are perfectly valid methods of getting rid of Bot traffic on your Tealeaf system.  The big difference between the first and second methods described are when you are dropping the traffic.  In the first method you are dropping the hits at the earliest point in the pipeline, while the second method you are dropping the hits after they have been forwarded from the capture server to the processing/canister server.</p>
+
+		<div class="center-x">
+					<%= link_to blog_path, class: "btn btn-sm btn-primary" do %>
+						<span class="glyphicon glyphicon-arrow-left"> Back</span>
+					<% end %>
+				</div>
+
+				<br>
+		</div>
+	</div>
+</div>
+
+<br><%= render 'layouts/navbar_blog' %>

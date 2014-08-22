@@ -1,0 +1,41 @@
+<div class="container"><br>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">DropHit rules for Bot Traffic <span class="badge">10-18-2011</span></h3>
+		</div>
+		<div class="panel-body">
+		<h3>Capture Server - DropHit rules for Bot Traffic</h3>
+		<p>Method 1 utilizes DropHit rules in the privacy.cfg file on the Passive Capture Appliance (PCA). The important thing to note when using DropHit rules is that we are working with each individual hit as it comes into the system and evaluating each hit against the rules in our privacy.cfg file. Since these rules are on the PCA, the DropHit rules will eliminate the Bot hits at the earliest point in the Tealeaf pipeline, avoiding any additional processing that will occur as hits traverse the Tealeaf environment.  You can create these rules using the GUI interface on the PCA, or by editing the privacy.cfg file in its raw format.  I prefer to edit the raw file, but use what ever method you are most comfortable with.</p>
+
+		<p>The following is an example DropHit rule as it would appear in the raw file:</p>
+
+			<ul><ul><ul>
+			<li>
+				[Rule15]
+				ReqField=HTTP_USER_AGENT
+				ReqOp=CONTAINS
+				ReqVal=Googlebot
+				Enabled=True
+				Actions=DropHit
+				Description=Googlebot
+			</li>
+			</ul></ul></ul>
+
+		<p>In this example, the rule is [Rule15].  For the privacy.cfg file, you can have up to 256 rules defined, and it is not recommended you use all 256.  Each new rule needs a unique number, and they do not need to be sequential, but it is nice to keep some sort of order when creating rules.  These rules are fairly low overhead for the system, because we are using a name/value pair found in the request to identify the Bot traffic.  The first field 'ReqField=' identifies the name/value pair we want to look at. The second field 'ReqOp=' indicates what we are matching in the ReqField, in this case we are looking for the ReqField to contain our value.  The third field 'ReqVal=' is the value we are looking for in the ReqField, and since the ReqOp is contains, it doesn't matter what other information may be in the ReqField value, as long as it contains our ReqVal.  The fourth field 'Enabled=' can be either True or False, and since we want this rule to drop the Googlebot hits, we set this to True.  The 'Actions=' directive can be any number of things, but for the purpose of this discussion, we want to use the built-in DropHit rule, which will drop the hit if this rule ([Rule15]) evaluates true, and the last item 'Description=' is optional, and allows you to provide additional information as to what this rule does.</p>
+
+		<p>I like this method of getting rid of Bot traffic, because it eliminates the hits at the earliest point in the pipeline, but you need to be careful not to create too many rules that you overburden the PCA.  Remember, you have a maximum of 256 rules you can create, and it is not recommended you do this.  If your PCA is already experiencing high load, this may not be the best place to introduce more load by creating a bunch of DropHit rules.  The downside to this method is that once you drop these hits, they are gone forever, you cannot get them back and do any analytics on this data.</p>
+
+		<p>This is my preferred method if you have additional processing power on your PCA, which is typically the case.  With a few carefully thought out DropHit rules, you can effectively eliminate the majority of your Bot traffic from ever getting into your Tealeaf system.</p>
+
+		<div class="center-x">
+					<%= link_to blog_path, class: "btn btn-sm btn-primary" do %>
+						<span class="glyphicon glyphicon-arrow-left"> Back</span>
+					<% end %>
+				</div>
+
+				<br>
+		</div>
+	</div>
+</div>
+
+<br><%= render 'layouts/navbar_blog' %>

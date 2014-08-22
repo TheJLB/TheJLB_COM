@@ -1,0 +1,44 @@
+<div class="container"><br>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Tealeaf/SiteCatalyst Integration <span class="badge">10-26-2012</span></h3>
+		</div>
+		<div class="panel-body">
+			<h3>Why Integrate Tealeaf and Site Catalyst</h3>
+			<p>Tealeaf and SiteCatalyst collect similar data, but to understand why you would want to integrate these two systems, you need to understand the differences in the data and information these tools provide. SiteCatalyst collects qualitative data that answers what happened on your website. Tealeaf, on the other hand, is a quantitative tool, that answers why something happened on your website. Knowing what happened on your website is the first step in measuring performance and improving your website. Knowing why something occurred helps improve your site accurately and consistently.</p>
+
+			<p>The objective of integrating your Tealeaf and SiteCatalyst systems is to leverage both qualitative and quantitative data together to make better decisions. Combining the power of SiteCatalyst (qualitative) segmentation capability with the session replay capability of Tealeaf (quantitative) removes the uncertainty from your analysis by answering both the what and why questions. Knowing that your conversion rate dropped 5% month over month tells you what happened, knowing why conversion rate is dropping could help you fix it.</p>
+
+			<b>Key items to a Tealeaf / SiteCatalyst Integration (cxConnect):</b>
+			<p><li>SiteCatalyst is an easy-to-use tool to segment website visits and collects a lot of qualitative data, but does not have much quantitative, granular data.</li>
+			<li>Tealeaf has a lot of quantitative, granular data, but is not built for a lot of users building segments and creating qualitative analysis on the fly.</li>
+			<li>Connecting or integrating SiteCatalyst and Tealeaf is facilitated by sharing a “key” between the two systems. A common session identifier would bridge the gap between the two tools.</li></p>
+
+			<p>Based on these items, Tealeaf and Omniture were able to create an integration that is easy to implement, using a common session identifier (usually TLTSID), and provides some great benefits. A snippit of JavaScript needs to be added to your existing SiteCatalyst code to take the Tealeaf session identifier and place it into a sProp or eVar. This variable becomes the primary key across both SiteCatalyst and Tealeaf, and once passed into SiteCatalyst, acts just like any other sProp or eVar. Once this is done, you can associate SiteCatalyst events to Tealeaf IDs, and segment your data on these variables. As previously stated, the primary objective of integration is to combine SiteCatalyst qualitative data and segmentation capability with the granular, quantitative session replay capability of Tealeaf. The following example shows how a typical integration would work:</p>
+
+			<p>Let’s say you have a high abandonment rate on your website. In SiteCatalyst, you can build a segment of website visitors that started the checkout process (Cart Checkout Success Event), but did not complete a purchase (Purchase Success Event). Using these two events Cart Checkout Success Event and Purchase Success Event, you have a segment of visitors that have abandoned the checkout process, called Checkout, but no Purchase in the example below:</p>
+
+			<p>Once this segment is created, you can use SiteCatalyst or Discover to analyze this segment. You may want to look at the Visit Number, Paths, Items in their Cart, or Browser type, but the one thing that is difficult to see in SiteCatalyst is the actual user experience. Being able to see the actual pages the visitor saw, how the pages looked, where the user entered data, and the exact messages the customer saw gives you the granular, quantitative insight into how you can improve the customer experience. SiteCatalyst answers the question of what happened on your website: your conversion rate is low. Tealeaf answers why your conversion is low by providing you with the ability to visually analyze the customer sessions on a much more granular and flexible level.</p>
+
+			<p>By using the SiteCatalyst/Tealeaf integration (cxConnect), once you have built the segment shown above, you can extract the Tealeaf session IDs that match this segment in SiteCatalyst and import this segment into Tealeaf. To do this, you apply this segment in SiteCatalyst, Discover or DataWarehouse and you can get a list of the exact Tealeaf session IDs that are stored in your sProp or eVar shown below:</p>
+
+			<p>Once you have a list of Tealeaf IDs (TLTSID) and have imported this session into Tealeaf, you can open the Tealeaf portal and view session replays to see if you can identify why this segment of visitors is failing to complete their transaction. In this example, I used a manual approach to identifying a segment and importing the results into Tealeaf. This process can also be automated, but requires some prior planning to determine the segments you want to be automatically imported into Tealeaf.</p>
+
+			<p>Once the segment is imported into Tealeaf, the following image is an example of what you would see in the Session Segments section of the Tealeaf portal:</p>
+
+			<p>In this example it is easy to see how simply passing a unique Tealeaf session ID to a SiteCatalyst variable can establish a powerful connection between the two tools that can be exploited in many interesting ways.</p>
+
+			<p>One additional point to keep in mind is that for many clients, the number of unique Tealeaf session IDs stored in SiteCatalyst will exceed the 500,000 monthly limit. This means that you will need to rely on a DataWarehouse to store these values, and that you may want to consider using an sProp instead of an eVar if you have a heavily trafficked site.</p>
+
+				<div class="center-x">
+					<%= link_to blog_path, class: "btn btn-sm btn-primary" do %>
+						<span class="glyphicon glyphicon-arrow-left"> Back</span>
+					<% end %>
+				</div>
+
+				<br>
+		</div>
+	</div>
+</div>
+
+<br><%= render 'layouts/navbar_blog' %>
