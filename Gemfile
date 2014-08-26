@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -19,3 +19,5 @@ end
 group :doc do
   gem 'sdoc', require: false
 end
+gem 'rubber'
+gem 'open4'
