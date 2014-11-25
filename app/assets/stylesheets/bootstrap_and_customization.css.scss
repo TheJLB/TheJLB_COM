@@ -5,40 +5,68 @@ body {
 	padding-bottom: 50px;
 }
 
+/* Home Page - Body Panels */
 .panel-home {
 	margin-top: -10px;
-	height: 210px;
-}
-
-.panel-default:hover {
-	background: #f5f5f5;
+	height: 205px;
 }
 
 /* Navbar Navbar-Fixed-Bottom Configurations */
+/* Footer _footer.html.erb */
 .navbar-fixed-bottom {
 	background: #B0C4DE;
 }
 
 /* Navbar Navbar-Fixed-Top Configurations */
+/* Page Header _header.html.erb */
 .navbar-fixed-top {
-	background: #B0C4DE;
+	background: #5C5C8A;
 }
 
+.navbar-fixed-top .divider-vertical {
+height: 50px;
+margin: 0 0px;
+border-left: 1px solid #8585AD;
+border-right: 0px solid #EBF5FF;
+}
+
+/* Navbar customizations */
+/* Page Header _header.html.erb */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-	color: #808080;
-	background: #F5F5DC;
+	color: #5C8AE6; /* Active item - header Menu */
+	background: #F5F5DC; /* Active header background */
+	font-weight: bold; /* Active header */
+}
+
+/* Header - hover text links */
+.navbar .nav > li > a:hover {
+	color: #EBF5FF;
 	font-weight: bold;
 }
 
+/* Header - Link text color */
+.navbar .nav > li > a {
+	color: #EBF5FF; /* Color for header text links */
+}
+
+/* Header - Text size */
 .navbar-nav {
-	font-size: 110%;
+	font-size: 122%;
+	margin-top: 25px;
 }
 
+/* Header - Brand customizations */
 .navbar-brand {
-	font-size: 200%;
+	font-size: 222%;
 	font-weight: bold;
+	margin-top: 20px;
+}
+
+/* Brand/Logo customizations */
+.navbar-default .navbar-brand {
+	color: #EBF5FF;
 }
 
 /* Jumbotron Configurations */
@@ -50,7 +78,7 @@ body {
 
 .page-header {
 	background: #F5F5DC;
-	margin-top: 0px;
+	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
@@ -61,13 +89,15 @@ body {
 
 h2 {
 	color: #006699;
-	font-family: serif;
-	font-size: 225%;
-	font-weight: bold;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 200%;
+
 }
 
 h4 {
 	color: #909090 ;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 130%;
 }
 
 h5 {
@@ -78,6 +108,7 @@ h5 {
 }
 
 /* Breadcrum Configurations */
+/* Footer */
 .breadcrumb {
 	background-color: #B0C4DE;
 }
@@ -92,6 +123,7 @@ h5 {
   color: #F0F8FF;
   font-size: 75%;
 }
+
 .breadcrumb > li + li:before {
     color: #483D8B;
     font-size: 100%;
@@ -100,8 +132,8 @@ h5 {
 }
 
 .dropdown {
-	color: #000;
-	background: #B0C4DE;
+	color: #F5F5DC;
+	background: #5C5C8A;
 }
 
 .panel {
@@ -109,13 +141,13 @@ h5 {
 	margin-top: 5px;
 }
 
+/* Panel heading background color */
 .panel-default .panel-heading {
-	background: #3399cc;
+	background: #7575A3;
 }
 
 .panel-title {
 	color: #4682B4;
-	font-weight: bold;
 }
 
 /* Footer Configurations */
@@ -124,10 +156,11 @@ h5 {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
+  height: 40px;
+  background-color: #F5F5DC;
 }
 
+/* Resume Panels - Customizations */
 .panel-heading .accordion-toggle:before {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
